@@ -12,7 +12,13 @@ const Callback: React.FC = () => {
     window.location.href = "/";
   }, []);
 
-  return <div>Logging you in...</div>;
+  return (
+    <>
+      <section id="callback">
+        <div>Logging you in...</div>
+      </section>
+    </>
+  );
 };
 
 export default Callback;
