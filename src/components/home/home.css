@@ -1,0 +1,137 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .home-container {
+    background-image: url("../../assets/home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align at the top */
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .header {
+    color: #Cfe6cb;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 3rem;
+  }
+  
+  .sub-text {
+    color: #cfe6cb;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: 1.4rem;
+  }
+  
+  .login-button {
+    background-color: #cfe6cb;
+    color: #301934;
+    font-size: 1rem; 
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 20px 45px; /* Increased padding to make the button larger */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    margin-left: 1.2rem;
+    border: 1px solid #301934;
+    outline: none;
+  }
+  
+  .login-button:hover {
+    background-color: #301934;
+    color: #cfe6cb;
+    border: 1px solid #cfe6cb;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(207, 230, 203, 0.8),
+                0 0 10px rgba(207, 230, 203, 0.8),
+                0 0 5px rgba(207, 230, 203, 0.8);
+    transform: translateY(-10px);
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-top: auto; /* Push the cards to the bottom of the container */
+    margin-bottom: 3.5rem; /* Add margin at the bottom */
+    flex-wrap: wrap; /* This will wrap the cards to a new line if there's not enough space */
+    margin-left: 20rem;
+  }
+  
+  /* Styles for the cards */
+  .info-card {
+    flex: 1; /* This will make the cards share equal space and be of the same size */
+    background-color: #CFE6CB;
+    color: #301934;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    margin: 15px; /* Adjust the margin as needed for spacing between cards */
+    width: 20rem;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .header {
+      font-size: 3rem;
+      padding: 10px;
+      margin-top: 1rem;
+    }
+    .home-container {
+      align-items: center; 
+    }
+    .sub-text {
+      font-size: 1rem;
+      padding-right: 1rem;
+    }
+    .login-button {
+      font-size: 0.9rem;
+      padding: 12px 25px;
+      margin-top: 1rem;
+      margin-right: 1rem;
+    }
+    .login-button:hover {
+      /* The glow and raise-up animation will still apply on mobile devices */
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4),
+                  0 0 20px rgba(207, 230, 203, 0.8),
+                  0 0 10px rgba(207, 230, 203, 0.8),
+                  0 0 5px rgba(207, 230, 203, 0.8);
+      transform: translateY(-10px);
+    }
+  
+    /* Mobile Responsive Styles for the cards */
+    .info-card {
+      width: calc(50% - 30px); /* Make the cards take 50% of the width minus margin for spacing */
+      max-width: 300px; /* Adjust the maximum width for better readability on smaller screens */
+      margin: 15px; /* Reduce the margin for better spacing between cards on mobile */
+      font-size: 0.9rem; /* Reduce text size for mobile devices */
+    }
+  
+    .cards-container {
+      margin-left: 0;
+      margin-top: auto;
+      margin-bottom: 2rem;
+      height: auto;
+    }
+  }

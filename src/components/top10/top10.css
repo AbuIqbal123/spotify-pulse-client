@@ -1,0 +1,151 @@
+.container {
+  background-color: aquamarine;
+  min-height: 100vh;
+  display: flex;
+}
+.left {
+  width: 50%;
+  background-color: #301933;
+  color: #daefe0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.artistList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Four columns in each row */
+  gap: 2px; /* Adjust the gap as needed */
+  justify-items: center; /* Center items horizontally */
+}
+.artistCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 13px;
+  font-size: small;
+  padding: 10px;
+}
+
+.artistCard img {
+  width: 70px; /* Adjust the width as needed */
+  height: 70px; /* Adjust the height as needed */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.right {
+  width: 50%;
+  background-color: #daefe0;
+  color: #301933;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.selectionbuttonleft {
+  background-color: #daefe0;
+  color: #301933;
+  padding: 40px;
+  margin-top: 40%;
+  width: 45%;
+  font-size: medium;
+  font-weight: bold;
+  margin: auto;
+
+  border-radius: 35px;
+}
+.selectionbuttonright {
+  background-color: #301933;
+  color: #daefe0;
+  padding: 40px;
+  margin-top: 40%;
+  width: 45%;
+  font-weight: bold;
+  margin: auto;
+  border-radius: 35px;
+}
+.goBackIcon svg {
+  margin-right: 4px; /* Adjust spacing as needed */
+  font-size: xx-large;
+}
+.goBackIcon {
+  padding: 10px;
+  text-align: start;
+  align-items: start;
+  margin-left: 30px;
+  margin-right: auto;
+  font-size: medium;
+  color: white;
+}
+.image-overlay {
+  background-image: url(../../assets/spotify.png);
+  background-size: contain; /* This ensures the entire background image fits within the div */
+  background-position: center; /* Center the background image */
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px; /* Adjust the width and height as needed */
+  height: 120px;
+  border-radius: 50%;
+  z-index: 10; /* z-index should not have 'px' */
+}
+
+.image-overlay img {
+  max-width: 10px;
+  max-height: 10px;
+  object-fit: contain;
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* Stack columns on top of each other */
+    height: 100vh;
+  }
+
+  .left,
+  .right {
+    width: 100%; /* Full width on smaller screens */
+    padding: 0px;
+    padding-top: 30px;
+    min-height: 100vh;
+    font-size: 20px;
+  }
+
+  .artistList {
+    grid-template-columns: repeat(3, 1fr); /* Three columns in each row */
+  }
+
+  .image-overlay {
+    display: none; /* Hide the overlay on tablet screens and smaller */
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack columns on top of each other */
+    width: 100%;
+  }
+
+  .left,
+  .right {
+    width: 100%; /* Full width on smaller screens */
+    padding-top: 30px;
+  }
+  .selectionbuttonright {
+    width: 60%;
+  }
+  .artistList {
+    grid-template-columns: repeat(3, 1fr); /* Two columns in each row */
+  }
+  .goBackIcon {
+    margin-left: 10px;
+  }
+}
