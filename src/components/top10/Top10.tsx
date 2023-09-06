@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./top10.css";
 import LeftSection from "./artist/ArtistSection";
 import RightSection from "./track/TrackSection";
-import ImageOverlay from "./Overlay";
 import axios from 'axios';
 
 export const Top10 = () => {
