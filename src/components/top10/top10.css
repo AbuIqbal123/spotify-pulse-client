@@ -71,8 +71,16 @@
   width: 45%;
   font-weight: bold;
   margin: auto;
+  font-size: medium;
   border-radius: 35px;
 }
+/* Hover effect for .selectionbuttonleft and .selectionbuttonright */
+.selectionbuttonleft:hover,
+.selectionbuttonright:hover {
+  transform: scale(1.05); /* Increase size on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
 .goBackIcon svg {
   margin-right: 4px; /* Adjust spacing as needed */
   font-size: xx-large;

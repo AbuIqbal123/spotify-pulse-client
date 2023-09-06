@@ -1,7 +1,6 @@
 import React from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { RightCard } from "../RightCard";
-import "./trackSelection.css"
 
 interface RightSectionProps {
   showTrack: boolean;
@@ -21,8 +20,8 @@ interface RightSectionProps {
         height: number;
         url: string;
         width: number;
-      }>
-    }
+      }>;
+    };
   }[];
 }
 

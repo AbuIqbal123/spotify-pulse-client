@@ -1,8 +1,6 @@
 import React from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Card from "../../card/Card";
-import "./artistSelection.css"
-
 interface LeftSectionProps {
   showArtists: boolean;
   showGoBack: boolean;
@@ -47,7 +45,7 @@ const LeftSection: React.FC<LeftSectionProps> = ({
             </div>
           )}
           <div className="artistList">
-          {artistData.map((item, index) => (
+            {artistData.map((item, index) => (
               <Card key={index} name={item.name} images={item.images} />
             ))}
           </div>
