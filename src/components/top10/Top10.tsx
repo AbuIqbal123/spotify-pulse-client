@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./top10.css";
 import LeftSection from "./artist/ArtistSection";
 import RightSection from "./track/TrackSection";
-import axios from 'axios';
+import axios from "axios";
 
 export const Top10 = () => {
   const [showArtists, setShowArtists] = useState(false);
@@ -15,32 +15,52 @@ export const Top10 = () => {
   const [tracksData, setTracksData] = useState([]);
 
   const getArtistData = async () => {
+    const token = localStorage.getItem("access_token");
+
+    if (!token) {
+      // Handle the case where the access token is missing.
+      console.error("Access token is missing.");
+      return;
+    }
+
     try {
-      const token = localStorage.getItem('access_token');
-      const artistResp = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/fetchTopArtists`, {
-        headers: {
-          Authorization: `${token}`,
-        },
-      });
+      const artistResp = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/fetchTopArtists`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
       setArtistData(artistResp.data.items);
     } catch (error) {
-      console.error('Error fetching artist data:', error);
+      console.error("Error fetching artist data:", error);
     }
-  }
+  };
 
   const getTracksData = async () => {
+    const token = localStorage.getItem("access_token");
+
+    if (!token) {
+      // Handle the case where the access token is missing.
+      console.error("Access token is missing.");
+      return;
+    }
+
     try {
-      const token = localStorage.getItem('access_token');
-      const tracksResp = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/fetchTopTracks`, {
-        headers: {
-          Authorization: `${token}`,
-        },
-      });
+      const tracksResp = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/fetchTopTracks`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
       setTracksData(tracksResp.data.items);
     } catch (error) {
-      console.error('Error fetching tracks data:', error);
+      console.error("Error fetching tracks data:", error);
     }
-  }
+  };
 
   const toggleArtists = () => {
     setShowArtists(!showArtists);
