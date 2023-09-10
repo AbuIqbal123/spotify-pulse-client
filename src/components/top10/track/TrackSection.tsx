@@ -7,12 +7,6 @@ interface RightSectionProps {
   showGoBack: boolean;
   toggleTrack: () => void;
   goBack: () => void;
-  data: {
-    name: string;
-    image: {
-      url: string;
-    };
-  }[];
   tracksData: {
     name: string;
     album: {

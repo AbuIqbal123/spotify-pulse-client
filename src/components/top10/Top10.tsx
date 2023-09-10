@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./top10.css";
 import LeftSection from "./artist/ArtistSection";
 import RightSection from "./track/TrackSection";
@@ -24,7 +24,7 @@ export const Top10 = () => {
       });
       setArtistData(artistResp.data.items);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching artist data:', error);
     }
   }
 
@@ -38,18 +38,18 @@ export const Top10 = () => {
       });
       setTracksData(tracksResp.data.items);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching tracks data:', error);
     }
   }
-
-  useEffect(() => {
-    getArtistData()
-    getTracksData()
-  }, []);
 
   const toggleArtists = () => {
     setShowArtists(!showArtists);
     setShowGoBack(true);
+
+    // Fetch artistData when the button is clicked
+    if (!artistData.length) {
+      getArtistData();
+    }
   };
 
   const goBack = () => {
@@ -57,9 +57,14 @@ export const Top10 = () => {
     setShowGoBack(false);
   };
 
-  const toggletrack = () => {
+  const toggleTrack = () => {
     setShowTrack(!showTrack);
     setShowGoBacktrack(true);
+
+    // Fetch tracksData when the button is clicked
+    if (!tracksData.length) {
+      getTracksData();
+    }
   };
 
   const goBacktrack = () => {
@@ -74,16 +79,13 @@ export const Top10 = () => {
         showGoBack={showGoBack}
         toggleArtists={toggleArtists}
         goBack={goBack}
-        data={[]}
         artistData={artistData}
       />
-      {/* <div className="image-overlay"></div> */}
       <RightSection
         showTrack={showTrack}
         showGoBack={showGoBacktrack}
-        toggleTrack={toggletrack}
+        toggleTrack={toggleTrack}
         goBack={goBacktrack}
-        data={[]}
         tracksData={tracksData}
       />
     </div>

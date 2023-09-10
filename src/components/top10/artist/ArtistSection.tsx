@@ -1,17 +1,12 @@
 import React from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Card from "../../card/Card";
+
 interface LeftSectionProps {
   showArtists: boolean;
   showGoBack: boolean;
   toggleArtists: () => void;
   goBack: () => void;
-  data: {
-    name: string;
-    image: {
-      url: string;
-    };
-  }[];
   artistData: {
     name: string;
     images: Array<{
