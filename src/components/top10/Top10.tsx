@@ -77,7 +77,7 @@ export const Top10 = () => {
         data={[]}
         artistData={artistData}
       />
-      <div className="image-overlay"></div>
+      {/* <div className="image-overlay"></div> */}
       <RightSection
         showTrack={showTrack}
         showGoBack={showGoBacktrack}
